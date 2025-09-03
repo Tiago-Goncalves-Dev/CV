@@ -14,7 +14,7 @@ class SobreMim extends StatelessWidget {
           children: [
             // Título destacado
             Text(
-              "Sobre Mim",
+              "About Me",
               style: TextStyle(
                 fontSize: 36,
                 fontWeight: FontWeight.bold,
@@ -61,44 +61,52 @@ class SobreMim extends StatelessWidget {
             const SizedBox(height: 30),
 
             // Secção de interesses
-            Align(
-              child: Text(
-                "Interesses:",
-                textAlign: TextAlign.center,
-                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-              ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: const [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.phone_android, color: Colors.indigo),
+                    SizedBox(width: 8),
+                    Text(
+                      "Desenvolvimento Mobile (Flutter, Kotlin, Android, iOS)",
+                    ),
+                  ],
+                ),
+                SizedBox(height: 12),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.web, color: Colors.indigo),
+                    SizedBox(width: 8),
+                    Text("Desenvolvimento Web (React, Node.js, Bootstrap)"),
+                  ],
+                ),
+                SizedBox(height: 12),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.memory, color: Colors.indigo),
+                    SizedBox(width: 8),
+                    Text("Bases de dados (SQL, SQLite, Firebase)"),
+                  ],
+                ),
+              ],
             ),
-            const SizedBox(height: 8),
-            const Text(
-              "• Desenvolvimento Mobile (Flutter, Android, iOS)\n"
-              "• Desenvolvimento Web (React, Node.js)\n"
-              "• Inteligência Artificial e Machine Learning\n"
-              "• UI/UX Design e boas práticas de código",
-            ),
-
             const SizedBox(height: 30),
 
             // Botão para voltar
-            TextButton.icon(
-              style: TextButton.styleFrom(
-                foregroundColor: Colors.grey[800],
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 24,
-                  vertical: 16,
-                ),
+            OutlinedButton.icon(
+              onPressed: () => Navigator.pop(context),
+              icon: Icon(Icons.arrow_back),
+              label: Text("Voltar"),
+              style: OutlinedButton.styleFrom(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
-                  side: const BorderSide(color: Colors.grey, width: 1.5),
                 ),
               ),
-              icon: const Icon(Icons.arrow_back),
-              label: const Text("Voltar"),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => HomePage()),
-                );
-              },
             ),
           ],
         ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:new_portefolio/SobreMim.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'widgets/gradient_text.dart';
 
 void main() {
   runApp(const PortfolioApp());
@@ -11,11 +13,11 @@ class PortfolioApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Portefólio',
+      title: 'Tiago Gonçalves - Software | Web | Mobile Developer',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.indigo,
-        scaffoldBackgroundColor: Colors.grey[100],
+        scaffoldBackgroundColor: const Color.fromARGB(255, 0, 0, 0),
       ),
       home: const HomePage(),
     );
@@ -54,30 +56,26 @@ class _HomePageState extends State<HomePage> {
                   },
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
-                    children: const [
+                    children: [
                       CircleAvatar(
                         radius: 60,
                         backgroundImage: AssetImage("assets/Eu.png"),
                       ),
                       SizedBox(height: 20),
-                      Text(
-                        "Tiago Gonçalves",
-                        style: TextStyle(
-                          fontSize: 28,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      GradientText(
+                        text: "Tiago Gonçalves",
+                        fontSize: 30,
                       ),
+
                       SizedBox(height: 5),
                       Text(
                         "Software Developer | Mobile & Web",
-                        style: TextStyle(fontSize: 16, color: Colors.grey),
+                        style: GoogleFonts.poppins(
+                          fontSize: 16,
+                          color: Colors.white,
+                        ),
                       ),
                       SizedBox(height: 30),
-                      Text(
-                        "Where my journey begins...",
-                        style: TextStyle(fontSize: 18),
-                        textAlign: TextAlign.center,
-                      ),
                     ],
                   ),
                 ),
@@ -102,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                     children: [
                       TextButton.icon(
                         style: TextButton.styleFrom(
-                          foregroundColor: Colors.grey[800],
+                          foregroundColor: Colors.white,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 24,
                             vertical: 16,
@@ -110,13 +108,13 @@ class _HomePageState extends State<HomePage> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                             side: const BorderSide(
-                              color: Colors.grey,
+                              color: Color.fromARGB(255, 40, 73, 41),
                               width: 1.5,
                             ),
                           ),
                         ),
                         icon: const Icon(Icons.person),
-                        label: const Text("Sobre Mim"),
+                        label: const Text("About"),
                         onPressed: () {
                           Navigator.push(
                             context,
@@ -126,7 +124,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       TextButton.icon(
                         style: TextButton.styleFrom(
-                          foregroundColor: Colors.grey[800],
+                          foregroundColor: Colors.white,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 24,
                             vertical: 16,
@@ -134,18 +132,18 @@ class _HomePageState extends State<HomePage> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                             side: const BorderSide(
-                              color: Colors.grey,
+                              color: Color.fromARGB(255, 40, 73, 41),
                               width: 1.5,
                             ),
                           ),
                         ),
                         icon: const Icon(Icons.person),
-                        label: const Text("Projetos"),
+                        label: const Text("Projects"),
                         onPressed: () {},
                       ),
                       TextButton.icon(
                         style: TextButton.styleFrom(
-                          foregroundColor: Colors.grey[800],
+                          foregroundColor: Colors.white,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 24,
                             vertical: 16,
@@ -153,26 +151,7 @@ class _HomePageState extends State<HomePage> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                             side: const BorderSide(
-                              color: Colors.grey,
-                              width: 1.5,
-                            ),
-                          ),
-                        ),
-                        icon: const Icon(Icons.work),
-                        label: const Text("Curriculo Vitae"),
-                        onPressed: () {},
-                      ),
-                      TextButton.icon(
-                        style: TextButton.styleFrom(
-                          foregroundColor: Colors.grey[800],
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 24,
-                            vertical: 16,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(12),
-                            side: const BorderSide(
-                              color: Colors.grey,
+                              color: Color.fromARGB(255, 40, 73, 41),
                               width: 1.5,
                             ),
                           ),
@@ -183,7 +162,7 @@ class _HomePageState extends State<HomePage> {
                       ),
                       TextButton.icon(
                         style: TextButton.styleFrom(
-                          foregroundColor: Colors.grey[800],
+                          foregroundColor: Colors.white,
                           padding: const EdgeInsets.symmetric(
                             horizontal: 24,
                             vertical: 16,
@@ -191,13 +170,13 @@ class _HomePageState extends State<HomePage> {
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(12),
                             side: const BorderSide(
-                              color: Colors.grey,
+                              color: Color.fromARGB(255, 40, 73, 41),
                               width: 1.5,
                             ),
                           ),
                         ),
                         icon: const Icon(Icons.contact_mail),
-                        label: const Text("Contacto"),
+                        label: const Text("Contact"),
                         onPressed: () {},
                       ),
                     ],
